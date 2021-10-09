@@ -89,7 +89,7 @@ class api_to_db():
                     # if d % 100 == 0:
                     # print(f'item: {item(df_raw2[d])}')
                     self.cur.execute(f'insert into {df} {values};', item(df_raw2[d]))
-                    self.cur.execute(f'insert into {df} {values};', item(df_raw2[d]))
+                    
                 
                 # print(f'{df} 테이블에 {i}부터 {j}까지 {length}개 레코드 삽입')
             except: 
