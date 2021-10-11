@@ -5,7 +5,7 @@ import sqlite3
 
 class api_to_db():
     def __init__(self):
-        conn = sqlite3.connect('raw_data.db')
+        conn = sqlite3.connect('raw_data_2016_2021.db')
         self.conn = conn
         cur = conn.cursor()
         self.cur = cur
@@ -100,15 +100,16 @@ class api_to_db():
         # print(f'commit done from {i} to {j}')
 
 
+
 data = api_to_db()
 
 table_list = {'sales':'VwsmTrdarSelngQq', 'living':'VwsmTrdarFlpopQq',
 'working':'VwsmTrdarWrcPopltnQq', 'house':'InfoTrdarAptQq'}
 
 for a, b in table_list.items():
-    # print('------------------------------------------------------------')
-    # print('\n[make 2021]')
-    data.make_db(df=a, content=b, year=2021)
-    # print('\n[make 2020]')
+    data.make_db(df=a, content=b, year=2016)
+    data.make_db(df=a, content=b, year=2017)
+    data.make_db(df=a, content=b, year=2018)
+    data.make_db(df=a, content=b, year=2019)
     data.make_db(df=a, content=b, year=2020)
-    # print('----------------done-------------------')
+    data.make_db(df=a, content=b, year=2021)
