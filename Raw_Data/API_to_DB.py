@@ -3,6 +3,9 @@ import json
 from operator import itemgetter
 import sqlite3
 
+table_list = {'sales':'VwsmTrdarSelngQq', 'living':'VwsmTrdarFlpopQq',
+'working':'VwsmTrdarWrcPopltnQq', 'house':'InfoTrdarAptQq'}
+
 class api_to_db():
     def __init__(self):
         conn = sqlite3.connect('raw_data_2016_2021.db')
@@ -79,7 +82,7 @@ class api_to_db():
 
         for i, j in zip(start, end):
             try:
-                API_URL = f"http://openapi.seoul.go.kr:8088/76485a52596d616e343153594f6e79/json/{content}/{i}/{j}/{year}"
+                API_URL = f"http://openapi.seoul.go.kr:8088/keyvalue/json/{content}/{i}/{j}/{year}"
                 raw_data = requests.get(API_URL)
                 df_raw = json.loads(raw_data.text)
                 df_raw2 = df_raw[content]['row']
@@ -103,8 +106,7 @@ class api_to_db():
 
 data = api_to_db()
 
-table_list = {'sales':'VwsmTrdarSelngQq', 'living':'VwsmTrdarFlpopQq',
-'working':'VwsmTrdarWrcPopltnQq', 'house':'InfoTrdarAptQq'}
+
 
 for a, b in table_list.items():
     data.make_db(df=a, content=b, year=2016)

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Project3</title>
+  </head>
+  <body>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+          <strong>Project3</strong>
+        </a>
+      </div>
+    </div>
+    <section class="py-5 text-center container">
+        <h2 class="fw-light">결과</h2>
+        <br>
+        <h3 class="fw-light">{{ YYYY }}년 {{ Q }}분기 {{ market }}의 {{ name }} 예측</h3>
+        <br>
+        - 업종수: {{ num1 }}개
+        <br>
+        - 점포수: {{ num2 }}개
+        <br>
+        - 생활인구: {{ people }}명
+        <br>
+        - 직장인구: {{ working }}명
+        <br>
+        - 아파트단지수: {{ house }}개
+        <br>
+        - 아파트 평균시가: {{ house_price }}원
+        <br>
+        - 예측하는 총 매출: {{ price }}원
+
+    </section>
+  </body>
+</html>
